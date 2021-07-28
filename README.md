@@ -1,7 +1,7 @@
 # rtifssd
 ## Real-time Interface Statistics Sender Daemon
 rtifssd is publisher daemon that currently sends per second interfaces statistics like inbound and outbound current and peak traffic, total data transferred and interface description.\
-It was written to use in a server running Multi-link PPP daemon (MPD).
+It was written to use in a server running Multi-link PPP daemon (MPD) and is a small part of my ISP management project.
 
 ### Currently implemented features
 Logging to syslog(8)\
