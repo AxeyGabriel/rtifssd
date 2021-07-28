@@ -1,0 +1,526 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_8f259/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_8f259.dir/build.make CMakeFiles/cmTC_8f259.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8f259.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_8f259.dir/src.c.o -MF CMakeFiles/cmTC_8f259.dir/src.c.o.d -o CMakeFiles/cmTC_8f259.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8f259
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f259.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_8f259.dir/src.c.o -o cmTC_8f259 
+ld: error: undefined symbol: pthread_create
+>>> referenced by src.c
+>>>               CMakeFiles/cmTC_8f259.dir/src.c.o:(main)
+cc: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_8f259.dir/build.make:100: cmTC_8f259] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_8f259/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_888db/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_888db.dir/build.make CMakeFiles/cmTC_888db.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_888db.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_888db.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_888db.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_888db.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_888db
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_888db.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_888db.dir/CheckFunctionExists.c.o -o cmTC_888db  -lpthreads 
+ld: error: unable to find library -lpthreads
+cc: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_888db.dir/build.make:100: cmTC_888db] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_888db/fast] Error 2
+
+
+
+Determining if files windows.h exist failed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_550ed/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_550ed.dir/build.make CMakeFiles/cmTC_550ed.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_550ed.dir/ZMQ_HAVE_WINDOWS.c.o
+/usr/bin/cc   -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_550ed.dir/ZMQ_HAVE_WINDOWS.c.o -MF CMakeFiles/cmTC_550ed.dir/ZMQ_HAVE_WINDOWS.c.o.d -o CMakeFiles/cmTC_550ed.dir/ZMQ_HAVE_WINDOWS.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CheckIncludeFiles/ZMQ_HAVE_WINDOWS.c
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CheckIncludeFiles/ZMQ_HAVE_WINDOWS.c:2:10: fatal error: 'windows.h' file not found
+#include <windows.h>
+         ^~~~~~~~~~~
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_550ed.dir/build.make:79: CMakeFiles/cmTC_550ed.dir/ZMQ_HAVE_WINDOWS.c.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_550ed/fast] Error 2
+
+
+Source:
+/* */
+#include <windows.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/eventfd.h exist failed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_14aa5/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_14aa5.dir/build.make CMakeFiles/cmTC_14aa5.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_14aa5.dir/ZMQ_HAVE_EVENTFD.c.o
+/usr/bin/cc   -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_14aa5.dir/ZMQ_HAVE_EVENTFD.c.o -MF CMakeFiles/cmTC_14aa5.dir/ZMQ_HAVE_EVENTFD.c.o.d -o CMakeFiles/cmTC_14aa5.dir/ZMQ_HAVE_EVENTFD.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CheckIncludeFiles/ZMQ_HAVE_EVENTFD.c
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CheckIncludeFiles/ZMQ_HAVE_EVENTFD.c:2:10: fatal error: 'sys/eventfd.h' file not found
+#include <sys/eventfd.h>
+         ^~~~~~~~~~~~~~~
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_14aa5.dir/build.make:79: CMakeFiles/cmTC_14aa5.dir/ZMQ_HAVE_EVENTFD.c.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_14aa5/fast] Error 2
+
+
+Source:
+/* */
+#include <sys/eventfd.h>
+
+
+int main(void){return 0;}
+
+Determining if the SO_PEERCRED exist failed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_73157/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_73157.dir/build.make CMakeFiles/cmTC_73157.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_73157.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_73157.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_73157.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_73157.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: use of undeclared identifier 'SO_PEERCRED'
+  return ((int*)(&SO_PEERCRED))[argc];
+                  ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_73157.dir/build.make:79: CMakeFiles/cmTC_73157.dir/CheckSymbolExists.cxx.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_73157/fast] Error 2
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <sys/socket.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef SO_PEERCRED
+  return ((int*)(&SO_PEERCRED))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the LOCAL_PEERCRED exist failed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_02712/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_02712.dir/build.make CMakeFiles/cmTC_02712.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_02712.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_02712.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_02712.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_02712.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: use of undeclared identifier 'LOCAL_PEERCRED'
+  return ((int*)(&LOCAL_PEERCRED))[argc];
+                  ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_02712.dir/build.make:79: CMakeFiles/cmTC_02712.dir/CheckSymbolExists.cxx.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_02712/fast] Error 2
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <sys/socket.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef LOCAL_PEERCRED
+  return ((int*)(&LOCAL_PEERCRED))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the SO_BUSY_POLL exist failed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_d91e1/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_d91e1.dir/build.make CMakeFiles/cmTC_d91e1.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d91e1.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_d91e1.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_d91e1.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_d91e1.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: use of undeclared identifier 'SO_BUSY_POLL'
+  return ((int*)(&SO_BUSY_POLL))[argc];
+                  ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_d91e1.dir/build.make:79: CMakeFiles/cmTC_d91e1.dir/CheckSymbolExists.cxx.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d91e1/fast] Error 2
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <sys/socket.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef SO_BUSY_POLL
+  return ((int*)(&SO_BUSY_POLL))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the gethrtime exist failed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_4b50e/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_4b50e.dir/build.make CMakeFiles/cmTC_4b50e.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_4b50e.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_4b50e.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_4b50e.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_4b50e.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: use of undeclared identifier 'gethrtime'; did you mean 'getitimer'?
+  return ((int*)(&gethrtime))[argc];
+                  ^~~~~~~~~
+                  getitimer
+/usr/include/sys/time.h:560:5: note: 'getitimer' declared here
+int     getitimer(int, struct itimerval *);
+        ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_4b50e.dir/build.make:79: CMakeFiles/cmTC_4b50e.dir/CheckSymbolExists.cxx.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_4b50e/fast] Error 2
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <sys/time.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef gethrtime
+  return ((int*)(&gethrtime))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test ZMQ_HAVE_SO_BINDTODEVICE failed with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_4a513/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_4a513.dir/build.make CMakeFiles/cmTC_4a513.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4a513.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_SO_BINDTODEVICE  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_4a513.dir/src.c.o -MF CMakeFiles/cmTC_4a513.dir/src.c.o.d -o CMakeFiles/cmTC_4a513.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_4a513
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a513.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_4a513.dir/src.c.o -o cmTC_4a513 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <sys/socket.h>
+
+int main(int argc, char *argv [])
+{
+/* Actually making the setsockopt() call requires CAP_NET_RAW */
+#ifndef SO_BINDTODEVICE
+    return 1;
+#else
+    return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_SO_PRIORITY failed with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_b6f64/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_b6f64.dir/build.make CMakeFiles/cmTC_b6f64.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b6f64.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_SO_PRIORITY  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_b6f64.dir/src.c.o -MF CMakeFiles/cmTC_b6f64.dir/src.c.o.d -o CMakeFiles/cmTC_b6f64.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:10:43: error: use of undeclared identifier 'SO_PRIORITY'
+        ((rc = setsockopt (s, SOL_SOCKET, SO_PRIORITY, (char*) &opt, sizeof (int))) == -1)
+                                          ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_b6f64.dir/build.make:79: CMakeFiles/cmTC_b6f64.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_b6f64/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <sys/types.h>
+#include <sys/socket.h>
+
+int main (int argc, char *argv [])
+{
+    int s, rc, opt = 1;
+    return (
+        ((s = socket (PF_INET, SOCK_STREAM, 0)) == -1) ||
+        ((rc = setsockopt (s, SOL_SOCKET, SO_PRIORITY, (char*) &opt, sizeof (int))) == -1)
+    );
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_TCP_KEEPALIVE failed with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_13cd1/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_13cd1.dir/build.make CMakeFiles/cmTC_13cd1.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_13cd1.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_TCP_KEEPALIVE  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_13cd1.dir/src.c.o -MF CMakeFiles/cmTC_13cd1.dir/src.c.o.d -o CMakeFiles/cmTC_13cd1.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:13:42: error: use of undeclared identifier 'TCP_KEEPALIVE'
+       ((rc = setsockopt(s, IPPROTO_TCP, TCP_KEEPALIVE,(char*) &opt, sizeof(int))) == -1)
+                                         ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_13cd1.dir/build.make:79: CMakeFiles/cmTC_13cd1.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_13cd1/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+
+int main(int argc, char *argv [])
+{
+    int s, rc, opt = 1;
+    return(
+       ((s = socket(PF_INET, SOCK_STREAM, 0)) == -1) ||
+       ((rc = setsockopt(s, SOL_SOCKET, SO_KEEPALIVE,(char*) &opt, sizeof(int))) == -1) ||
+       ((rc = setsockopt(s, IPPROTO_TCP, TCP_KEEPALIVE,(char*) &opt, sizeof(int))) == -1)
+    );
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_TIPC failed with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_90193/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_90193.dir/build.make CMakeFiles/cmTC_90193.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_90193.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_TIPC  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_90193.dir/src.c.o -MF CMakeFiles/cmTC_90193.dir/src.c.o.d -o CMakeFiles/cmTC_90193.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:7:10: fatal error: 'linux/tipc.h' file not found
+#include <linux/tipc.h>
+         ^~~~~~~~~~~~~~
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_90193.dir/build.make:79: CMakeFiles/cmTC_90193.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_90193/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <sys/socket.h>
+#include <linux/tipc.h>
+
+int main(int argc, char *argv [])
+{
+    struct sockaddr_tipc topsrv;
+    int sd = socket(AF_TIPC, SOCK_SEQPACKET, 0);
+    memset(&topsrv, 0, sizeof(topsrv));
+    topsrv.family = AF_TIPC;
+    topsrv.addrtype = TIPC_ADDR_NAME;
+    topsrv.addr.name.name.type = TIPC_TOP_SRV;
+    topsrv.addr.name.name.instance = TIPC_TOP_SRV;
+    fcntl(sd, F_SETFL, O_NONBLOCK);
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_PTHREAD_SETNAME_1 failed with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_d6f5b/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_d6f5b.dir/build.make CMakeFiles/cmTC_d6f5b.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d6f5b.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_PTHREAD_SETNAME_1  -std=c11 -Wno-tautological-constant-compare -D_GNU_SOURCE -Werror -pthread -MD -MT CMakeFiles/cmTC_d6f5b.dir/src.c.o -MF CMakeFiles/cmTC_d6f5b.dir/src.c.o.d -o CMakeFiles/cmTC_d6f5b.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:6:5: error: implicit declaration of function 'pthread_setname_np' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    pthread_setname_np ("foo");
+    ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_d6f5b.dir/build.make:79: CMakeFiles/cmTC_d6f5b.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d6f5b/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <pthread.h>
+
+int main(int argc, char *argv [])
+{
+    pthread_setname_np ("foo");
+    return 0;
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_PTHREAD_SETNAME_2 failed with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_1a29d/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_1a29d.dir/build.make CMakeFiles/cmTC_1a29d.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1a29d.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_PTHREAD_SETNAME_2  -std=c11 -Wno-tautological-constant-compare -D_GNU_SOURCE -Werror -pthread -MD -MT CMakeFiles/cmTC_1a29d.dir/src.c.o -MF CMakeFiles/cmTC_1a29d.dir/src.c.o.d -o CMakeFiles/cmTC_1a29d.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:6:5: error: implicit declaration of function 'pthread_setname_np' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    pthread_setname_np (pthread_self(), "foo");
+    ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_1a29d.dir/build.make:79: CMakeFiles/cmTC_1a29d.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_1a29d/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <pthread.h>
+
+int main(int argc, char *argv [])
+{
+    pthread_setname_np (pthread_self(), "foo");
+    return 0;
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_PTHREAD_SETNAME_3 failed with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_3e9d0/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_3e9d0.dir/build.make CMakeFiles/cmTC_3e9d0.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3e9d0.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_PTHREAD_SETNAME_3  -std=c11 -Wno-tautological-constant-compare -D_GNU_SOURCE -Werror -pthread -MD -MT CMakeFiles/cmTC_3e9d0.dir/src.c.o -MF CMakeFiles/cmTC_3e9d0.dir/src.c.o.d -o CMakeFiles/cmTC_3e9d0.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:6:5: error: implicit declaration of function 'pthread_setname_np' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    pthread_setname_np (pthread_self(), "foo", (void *)0);
+    ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_3e9d0.dir/build.make:79: CMakeFiles/cmTC_3e9d0.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_3e9d0/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <pthread.h>
+
+int main(int argc, char *argv [])
+{
+    pthread_setname_np (pthread_self(), "foo", (void *)0);
+    return 0;
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_PTHREAD_SET_NAME failed with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_0b723/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_0b723.dir/build.make CMakeFiles/cmTC_0b723.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0b723.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_PTHREAD_SET_NAME  -std=c11 -Wno-tautological-constant-compare -D_GNU_SOURCE -Werror -pthread -MD -MT CMakeFiles/cmTC_0b723.dir/src.c.o -MF CMakeFiles/cmTC_0b723.dir/src.c.o.d -o CMakeFiles/cmTC_0b723.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:6:5: error: implicit declaration of function 'pthread_set_name_np' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    pthread_set_name_np (pthread_self(), "foo");
+    ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_0b723.dir/build.make:79: CMakeFiles/cmTC_0b723.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_0b723/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <pthread.h>
+
+int main(int argc, char *argv [])
+{
+    pthread_set_name_np (pthread_self(), "foo");
+    return 0;
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_PTHREAD_SET_AFFINITY failed with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_f1edf/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_f1edf.dir/build.make CMakeFiles/cmTC_f1edf.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f1edf.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_PTHREAD_SET_AFFINITY  -std=c11 -Wno-tautological-constant-compare -D_GNU_SOURCE -Werror -pthread -MD -MT CMakeFiles/cmTC_f1edf.dir/src.c.o -MF CMakeFiles/cmTC_f1edf.dir/src.c.o.d -o CMakeFiles/cmTC_f1edf.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:6:5: error: use of undeclared identifier 'cpu_set_t'
+    cpu_set_t test; 
+    ^
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:7:5: error: implicit declaration of function 'pthread_setaffinity_np' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    pthread_setaffinity_np (pthread_self(), sizeof(cpu_set_t), &test);
+    ^
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:7:52: error: use of undeclared identifier 'cpu_set_t'
+    pthread_setaffinity_np (pthread_self(), sizeof(cpu_set_t), &test);
+                                                   ^
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c:7:65: error: use of undeclared identifier 'test'; did you mean 'tzset'?
+    pthread_setaffinity_np (pthread_self(), sizeof(cpu_set_t), &test);
+                                                                ^~~~
+                                                                tzset
+/usr/include/time.h:169:6: note: 'tzset' declared here
+void tzset(void);
+     ^
+4 errors generated.
+gmake[1]: *** [CMakeFiles/cmTC_f1edf.dir/build.make:79: CMakeFiles/cmTC_f1edf.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_f1edf/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <pthread.h>
+
+int main(int argc, char *argv [])
+{
+    cpu_set_t test; 
+    pthread_setaffinity_np (pthread_self(), sizeof(cpu_set_t), &test);
+    return 0;
+}
+

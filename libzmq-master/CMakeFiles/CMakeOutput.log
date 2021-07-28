@@ -1,0 +1,952 @@
+The system is: FreeBSD - 12.1-RELEASE-p5 - amd64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is Clang, found in "/home/vipnet/rtifssd/libzmq-master/CMakeFiles/3.20.4/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is Clang, found in "/home/vipnet/rtifssd/libzmq-master/CMakeFiles/3.20.4/CompilerIdCXX/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_f12a9/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_f12a9.dir/build.make CMakeFiles/cmTC_f12a9.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -MD -MT CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake/Modules/CMakeCCompilerABI.c
+FreeBSD clang version 8.0.1 (tags/RELEASE_801/final 366581) (based on LLVM 8.0.1)
+Target: x86_64-unknown-freebsd12.1
+Thread model: posix
+InstalledDir: /usr/bin
+ "/usr/bin/cc" -cc1 -triple x86_64-unknown-freebsd12.1 -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -v -coverage-notes-file /usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.gcno -resource-dir /usr/lib/clang/8.0.1 -dependency-file CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o.d -sys-header-deps -MT CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -fdebug-compilation-dir /usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fobjc-runtime=gnustep -fdiagnostics-show-option -o CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -x c /usr/local/share/cmake/Modules/CMakeCCompilerABI.c -faddrsig
+clang -cc1 version 8.0.1 based upon LLVM 8.0.1 default target x86_64-unknown-freebsd12.1
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/clang/8.0.1/include
+ /usr/include
+End of search list.
+Linking C executable cmTC_f12a9
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f12a9.dir/link.txt --verbose=1
+/usr/bin/cc  -v CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -o cmTC_f12a9 
+FreeBSD clang version 8.0.1 (tags/RELEASE_801/final 366581) (based on LLVM 8.0.1)
+Target: x86_64-unknown-freebsd12.1
+Thread model: posix
+InstalledDir: /usr/bin
+ "/usr/bin/ld" --eh-frame-hdr -dynamic-linker /libexec/ld-elf.so.1 --hash-style=both --enable-new-dtags -o cmTC_f12a9 /usr/lib/crt1.o /usr/lib/crti.o /usr/lib/crtbegin.o -L/usr/lib CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/crtend.o /usr/lib/crtn.o
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/clang/8.0.1/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/clang/8.0.1/include] ==> [/usr/lib/clang/8.0.1/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/clang/8.0.1/include;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_f12a9/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_f12a9.dir/build.make CMakeFiles/cmTC_f12a9.dir/build]
+  ignore line: [gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -MD -MT CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [FreeBSD clang version 8.0.1 (tags/RELEASE_801/final 366581) (based on LLVM 8.0.1)]
+  ignore line: [Target: x86_64-unknown-freebsd12.1]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /usr/bin]
+  ignore line: [ "/usr/bin/cc" -cc1 -triple x86_64-unknown-freebsd12.1 -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -v -coverage-notes-file /usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.gcno -resource-dir /usr/lib/clang/8.0.1 -dependency-file CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o.d -sys-header-deps -MT CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -fdebug-compilation-dir /usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fobjc-runtime=gnustep -fdiagnostics-show-option -o CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -x c /usr/local/share/cmake/Modules/CMakeCCompilerABI.c -faddrsig]
+  ignore line: [clang -cc1 version 8.0.1 based upon LLVM 8.0.1 default target x86_64-unknown-freebsd12.1]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/clang/8.0.1/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_f12a9]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f12a9.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -o cmTC_f12a9 ]
+  ignore line: [FreeBSD clang version 8.0.1 (tags/RELEASE_801/final 366581) (based on LLVM 8.0.1)]
+  ignore line: [Target: x86_64-unknown-freebsd12.1]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /usr/bin]
+  link line: [ "/usr/bin/ld" --eh-frame-hdr -dynamic-linker /libexec/ld-elf.so.1 --hash-style=both --enable-new-dtags -o cmTC_f12a9 /usr/lib/crt1.o /usr/lib/crti.o /usr/lib/crtbegin.o -L/usr/lib CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/crtend.o /usr/lib/crtn.o]
+    arg [/usr/bin/ld] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/libexec/ld-elf.so.1] ==> ignore
+    arg [--hash-style=both] ==> ignore
+    arg [--enable-new-dtags] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_f12a9] ==> ignore
+    arg [/usr/lib/crt1.o] ==> obj [/usr/lib/crt1.o]
+    arg [/usr/lib/crti.o] ==> obj [/usr/lib/crti.o]
+    arg [/usr/lib/crtbegin.o] ==> obj [/usr/lib/crtbegin.o]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTC_f12a9.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/crtend.o] ==> obj [/usr/lib/crtend.o]
+    arg [/usr/lib/crtn.o] ==> obj [/usr/lib/crtn.o]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/usr/lib/crt1.o;/usr/lib/crti.o;/usr/lib/crtbegin.o;/usr/lib/crtend.o;/usr/lib/crtn.o]
+  implicit dirs: [/usr/lib]
+  implicit fwks: []
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_131be/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_131be.dir/build.make CMakeFiles/cmTC_131be.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -MD -MT CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+FreeBSD clang version 8.0.1 (tags/RELEASE_801/final 366581) (based on LLVM 8.0.1)
+Target: x86_64-unknown-freebsd12.1
+Thread model: posix
+InstalledDir: /usr/bin
+ "/usr/bin/c++" -cc1 -triple x86_64-unknown-freebsd12.1 -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -v -coverage-notes-file /usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.gcno -resource-dir /usr/lib/clang/8.0.1 -dependency-file CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o.d -sys-header-deps -MT CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -internal-isystem /usr/include/c++/v1 -fdeprecated-macro -fdebug-compilation-dir /usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fobjc-runtime=gnustep -fcxx-exceptions -fexceptions -fdiagnostics-show-option -o CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp -faddrsig
+clang -cc1 version 8.0.1 based upon LLVM 8.0.1 default target x86_64-unknown-freebsd12.1
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/include/c++/v1
+ /usr/lib/clang/8.0.1/include
+ /usr/include
+End of search list.
+Linking CXX executable cmTC_131be
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_131be.dir/link.txt --verbose=1
+/usr/bin/c++  -v CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_131be 
+FreeBSD clang version 8.0.1 (tags/RELEASE_801/final 366581) (based on LLVM 8.0.1)
+Target: x86_64-unknown-freebsd12.1
+Thread model: posix
+InstalledDir: /usr/bin
+ "/usr/bin/ld" --eh-frame-hdr -dynamic-linker /libexec/ld-elf.so.1 --hash-style=both --enable-new-dtags -o cmTC_131be /usr/lib/crt1.o /usr/lib/crti.o /usr/lib/crtbegin.o -L/usr/lib CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lm -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/crtend.o /usr/lib/crtn.o
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/include/c++/v1]
+    add: [/usr/lib/clang/8.0.1/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/include/c++/v1] ==> [/usr/include/c++/v1]
+  collapse include dir [/usr/lib/clang/8.0.1/include] ==> [/usr/lib/clang/8.0.1/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/include/c++/v1;/usr/lib/clang/8.0.1/include;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_131be/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_131be.dir/build.make CMakeFiles/cmTC_131be.dir/build]
+  ignore line: [gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -MD -MT CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [FreeBSD clang version 8.0.1 (tags/RELEASE_801/final 366581) (based on LLVM 8.0.1)]
+  ignore line: [Target: x86_64-unknown-freebsd12.1]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /usr/bin]
+  ignore line: [ "/usr/bin/c++" -cc1 -triple x86_64-unknown-freebsd12.1 -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -v -coverage-notes-file /usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.gcno -resource-dir /usr/lib/clang/8.0.1 -dependency-file CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o.d -sys-header-deps -MT CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -internal-isystem /usr/include/c++/v1 -fdeprecated-macro -fdebug-compilation-dir /usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fobjc-runtime=gnustep -fcxx-exceptions -fexceptions -fdiagnostics-show-option -o CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp -faddrsig]
+  ignore line: [clang -cc1 version 8.0.1 based upon LLVM 8.0.1 default target x86_64-unknown-freebsd12.1]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/include/c++/v1]
+  ignore line: [ /usr/lib/clang/8.0.1/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_131be]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_131be.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_131be ]
+  ignore line: [FreeBSD clang version 8.0.1 (tags/RELEASE_801/final 366581) (based on LLVM 8.0.1)]
+  ignore line: [Target: x86_64-unknown-freebsd12.1]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /usr/bin]
+  link line: [ "/usr/bin/ld" --eh-frame-hdr -dynamic-linker /libexec/ld-elf.so.1 --hash-style=both --enable-new-dtags -o cmTC_131be /usr/lib/crt1.o /usr/lib/crti.o /usr/lib/crtbegin.o -L/usr/lib CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lm -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/crtend.o /usr/lib/crtn.o]
+    arg [/usr/bin/ld] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/libexec/ld-elf.so.1] ==> ignore
+    arg [--hash-style=both] ==> ignore
+    arg [--enable-new-dtags] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_131be] ==> ignore
+    arg [/usr/lib/crt1.o] ==> obj [/usr/lib/crt1.o]
+    arg [/usr/lib/crti.o] ==> obj [/usr/lib/crti.o]
+    arg [/usr/lib/crtbegin.o] ==> obj [/usr/lib/crtbegin.o]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTC_131be.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lc++] ==> lib [c++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/crtend.o] ==> obj [/usr/lib/crtend.o]
+    arg [/usr/lib/crtn.o] ==> obj [/usr/lib/crtn.o]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  implicit libs: [c++;m;gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/usr/lib/crt1.o;/usr/lib/crti.o;/usr/lib/crtbegin.o;/usr/lib/crtend.o;/usr/lib/crtn.o]
+  implicit dirs: [/usr/lib]
+  implicit fwks: []
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_5e79d/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_5e79d.dir/build.make CMakeFiles/cmTC_5e79d.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5e79d.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -MD -MT CMakeFiles/cmTC_5e79d.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_5e79d.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_5e79d.dir/CheckIncludeFile.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_5e79d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e79d.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_5e79d.dir/CheckIncludeFile.c.o -o cmTC_5e79d 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_38a73/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_38a73.dir/build.make CMakeFiles/cmTC_38a73.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_38a73.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_38a73.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_38a73.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_38a73.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_38a73
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38a73.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_38a73.dir/CheckFunctionExists.c.o -o cmTC_38a73  -lpthread 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX11 succeeded with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_b8122/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_b8122.dir/build.make CMakeFiles/cmTC_b8122.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b8122.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORTS_CXX11  -std=c++11 -MD -MT CMakeFiles/cmTC_b8122.dir/src.cxx.o -MF CMakeFiles/cmTC_b8122.dir/src.cxx.o.d -o CMakeFiles/cmTC_b8122.dir/src.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_b8122
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8122.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_b8122.dir/src.cxx.o -o cmTC_b8122 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_C11 succeeded with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_115ce/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_115ce.dir/build.make CMakeFiles/cmTC_115ce.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_115ce.dir/src.c.o
+/usr/bin/cc -DCOMPILER_SUPPORTS_C11  -std=c11 -MD -MT CMakeFiles/cmTC_115ce.dir/src.c.o -MF CMakeFiles/cmTC_115ce.dir/src.c.o.d -o CMakeFiles/cmTC_115ce.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_115ce
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_115ce.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_115ce.dir/src.c.o -o cmTC_115ce 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test CXX_HAS_TAUT_WARNING succeeded with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_05d63/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_05d63.dir/build.make CMakeFiles/cmTC_05d63.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_05d63.dir/src.cxx.o
+/usr/bin/c++ -DCXX_HAS_TAUT_WARNING  -std=c++11    -Wno-tautological-constant-compare -MD -MT CMakeFiles/cmTC_05d63.dir/src.cxx.o -MF CMakeFiles/cmTC_05d63.dir/src.cxx.o.d -o CMakeFiles/cmTC_05d63.dir/src.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_05d63
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05d63.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11  CMakeFiles/cmTC_05d63.dir/src.cxx.o -o cmTC_05d63 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test CC_HAS_TAUT_WARNING succeeded with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_715bf/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_715bf.dir/build.make CMakeFiles/cmTC_715bf.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_715bf.dir/src.c.o
+/usr/bin/cc -DCC_HAS_TAUT_WARNING  -std=c11    -Wno-tautological-constant-compare -MD -MT CMakeFiles/cmTC_715bf.dir/src.c.o -MF CMakeFiles/cmTC_715bf.dir/src.c.o.d -o CMakeFiles/cmTC_715bf.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_715bf
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_715bf.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11  CMakeFiles/cmTC_715bf.dir/src.c.o -o cmTC_715bf 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Determining if the strlcpy exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_66132/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_66132.dir/build.make CMakeFiles/cmTC_66132.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_66132.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_66132.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_66132.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_66132.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_66132
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66132.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_66132.dir/CheckSymbolExists.cxx.o -o cmTC_66132 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strlcpy
+  return ((int*)(&strlcpy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the kqueue exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_00aa6/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_00aa6.dir/build.make CMakeFiles/cmTC_00aa6.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_00aa6.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_00aa6.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_00aa6.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_00aa6.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_00aa6
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00aa6.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_00aa6.dir/CheckSymbolExists.cxx.o -o cmTC_00aa6 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <sys/event.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef kqueue
+  return ((int*)(&kqueue))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the posix_memalign exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_58058/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_58058.dir/build.make CMakeFiles/cmTC_58058.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_58058.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_58058.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_58058.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_58058.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_58058
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58058.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_58058.dir/CheckSymbolExists.cxx.o -o cmTC_58058 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef posix_memalign
+  return ((int*)(&posix_memalign))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if files condition_variable exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_da650/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_da650.dir/build.make CMakeFiles/cmTC_da650.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_da650.dir/ZMQ_HAVE_STL_CONDITION_VARIABLE.cpp.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_da650.dir/ZMQ_HAVE_STL_CONDITION_VARIABLE.cpp.o -MF CMakeFiles/cmTC_da650.dir/ZMQ_HAVE_STL_CONDITION_VARIABLE.cpp.o.d -o CMakeFiles/cmTC_da650.dir/ZMQ_HAVE_STL_CONDITION_VARIABLE.cpp.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CheckIncludeFiles/ZMQ_HAVE_STL_CONDITION_VARIABLE.cpp
+Linking CXX executable cmTC_da650
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da650.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_da650.dir/ZMQ_HAVE_STL_CONDITION_VARIABLE.cpp.o -o cmTC_da650 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files ifaddrs.h exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_8519c/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_8519c.dir/build.make CMakeFiles/cmTC_8519c.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8519c.dir/ZMQ_HAVE_IFADDRS.c.o
+/usr/bin/cc   -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_8519c.dir/ZMQ_HAVE_IFADDRS.c.o -MF CMakeFiles/cmTC_8519c.dir/ZMQ_HAVE_IFADDRS.c.o.d -o CMakeFiles/cmTC_8519c.dir/ZMQ_HAVE_IFADDRS.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CheckIncludeFiles/ZMQ_HAVE_IFADDRS.c
+Linking C executable cmTC_8519c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8519c.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_8519c.dir/ZMQ_HAVE_IFADDRS.c.o -o cmTC_8519c 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/uio.h exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_d54ea/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_d54ea.dir/build.make CMakeFiles/cmTC_d54ea.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d54ea.dir/ZMQ_HAVE_UIO.c.o
+/usr/bin/cc   -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_d54ea.dir/ZMQ_HAVE_UIO.c.o -MF CMakeFiles/cmTC_d54ea.dir/ZMQ_HAVE_UIO.c.o.d -o CMakeFiles/cmTC_d54ea.dir/ZMQ_HAVE_UIO.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CheckIncludeFiles/ZMQ_HAVE_UIO.c
+Linking C executable cmTC_d54ea
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d54ea.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_d54ea.dir/ZMQ_HAVE_UIO.c.o -o cmTC_d54ea 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the if_nametoindex exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_9b1dc/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_9b1dc.dir/build.make CMakeFiles/cmTC_9b1dc.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9b1dc.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_9b1dc.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_9b1dc.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_9b1dc.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_9b1dc
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b1dc.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_9b1dc.dir/CheckSymbolExists.cxx.o -o cmTC_9b1dc 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <net/if.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef if_nametoindex
+  return ((int*)(&if_nametoindex))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the clock_gettime exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_3d0ec/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_3d0ec.dir/build.make CMakeFiles/cmTC_3d0ec.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3d0ec.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_3d0ec.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_3d0ec.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_3d0ec.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_3d0ec
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d0ec.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_3d0ec.dir/CheckSymbolExists.cxx.o -o cmTC_3d0ec  -lrt 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <time.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef clock_gettime
+  return ((int*)(&clock_gettime))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the fork exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_db9e0/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_db9e0.dir/build.make CMakeFiles/cmTC_db9e0.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_db9e0.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_db9e0.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_db9e0.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_db9e0.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_db9e0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db9e0.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_db9e0.dir/CheckSymbolExists.cxx.o -o cmTC_db9e0 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef fork
+  return ((int*)(&fork))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the mkdtemp exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_00ae2/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_00ae2.dir/build.make CMakeFiles/cmTC_00ae2.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_00ae2.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_00ae2.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_00ae2.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_00ae2.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_00ae2
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00ae2.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_00ae2.dir/CheckSymbolExists.cxx.o -o cmTC_00ae2 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef mkdtemp
+  return ((int*)(&mkdtemp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the accept4 exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_87547/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_87547.dir/build.make CMakeFiles/cmTC_87547.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_87547.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_87547.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_87547.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_87547.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_87547
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87547.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_87547.dir/CheckSymbolExists.cxx.o -o cmTC_87547 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <sys/socket.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef accept4
+  return ((int*)(&accept4))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strnlen exist passed with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_8e107/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_8e107.dir/build.make CMakeFiles/cmTC_8e107.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8e107.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_8e107.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_8e107.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_8e107.dir/CheckSymbolExists.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_8e107
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e107.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_8e107.dir/CheckSymbolExists.cxx.o -o cmTC_8e107 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+File /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strnlen
+  return ((int*)(&strnlen))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C++ SOURCE FILE Test HAVE_FLAG_-Wall succeeded with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_e429a/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_e429a.dir/build.make CMakeFiles/cmTC_e429a.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e429a.dir/src.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare    -DHAVE_FLAG_-Wall -Wall -MD -MT CMakeFiles/cmTC_e429a.dir/src.cxx.o -MF CMakeFiles/cmTC_e429a.dir/src.cxx.o.d -o CMakeFiles/cmTC_e429a.dir/src.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx
+In file included from <built-in>:377:
+<command line>:1:19: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define HAVE_FLAG_-Wall 1
+                  ^
+1 warning generated.
+Linking CXX executable cmTC_e429a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e429a.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_e429a.dir/src.cxx.o -o cmTC_e429a 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_FLAG_-Wextra succeeded with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_1bd87/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_1bd87.dir/build.make CMakeFiles/cmTC_1bd87.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1bd87.dir/src.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare -Wall    -DHAVE_FLAG_-Wextra -Wextra -MD -MT CMakeFiles/cmTC_1bd87.dir/src.cxx.o -MF CMakeFiles/cmTC_1bd87.dir/src.cxx.o.d -o CMakeFiles/cmTC_1bd87.dir/src.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx
+In file included from <built-in>:377:
+<command line>:1:19: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define HAVE_FLAG_-Wextra 1
+                  ^
+1 warning generated.
+Linking CXX executable cmTC_1bd87
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1bd87.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare -Wall  CMakeFiles/cmTC_1bd87.dir/src.cxx.o -o cmTC_1bd87 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_FLAG_-Wno-long-long succeeded with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_295c1/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_295c1.dir/build.make CMakeFiles/cmTC_295c1.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_295c1.dir/src.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare -Wall -Wextra    -DHAVE_FLAG_-Wno-long-long -Wno-long-long -MD -MT CMakeFiles/cmTC_295c1.dir/src.cxx.o -MF CMakeFiles/cmTC_295c1.dir/src.cxx.o.d -o CMakeFiles/cmTC_295c1.dir/src.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx
+In file included from <built-in>:377:
+<command line>:1:19: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define HAVE_FLAG_-Wno-long-long 1
+                  ^
+1 warning generated.
+Linking CXX executable cmTC_295c1
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_295c1.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare -Wall -Wextra  CMakeFiles/cmTC_295c1.dir/src.cxx.o -o cmTC_295c1 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_FLAG_-Wno-uninitialized succeeded with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_c99c5/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_c99c5.dir/build.make CMakeFiles/cmTC_c99c5.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c99c5.dir/src.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare -Wall -Wextra -Wno-long-long    -DHAVE_FLAG_-Wno-uninitialized -Wno-uninitialized -MD -MT CMakeFiles/cmTC_c99c5.dir/src.cxx.o -MF CMakeFiles/cmTC_c99c5.dir/src.cxx.o.d -o CMakeFiles/cmTC_c99c5.dir/src.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx
+In file included from <built-in>:377:
+<command line>:1:19: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define HAVE_FLAG_-Wno-uninitialized 1
+                  ^
+1 warning generated.
+Linking CXX executable cmTC_c99c5
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c99c5.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare -Wall -Wextra -Wno-long-long  CMakeFiles/cmTC_c99c5.dir/src.cxx.o -o cmTC_c99c5 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_FLAG_-pedantic succeeded with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_a4a79/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_a4a79.dir/build.make CMakeFiles/cmTC_a4a79.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a4a79.dir/src.cxx.o
+/usr/bin/c++   -std=c++11 -Wno-tautological-constant-compare -Wall -Wextra -Wno-long-long -Wno-uninitialized    -DHAVE_FLAG_-pedantic -pedantic -MD -MT CMakeFiles/cmTC_a4a79.dir/src.cxx.o -MF CMakeFiles/cmTC_a4a79.dir/src.cxx.o.d -o CMakeFiles/cmTC_a4a79.dir/src.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx
+In file included from <built-in>:377:
+<command line>:1:19: warning: ISO C99 requires whitespace after the macro name [-Wc99-extensions]
+#define HAVE_FLAG_-pedantic 1
+                  ^
+1 warning generated.
+Linking CXX executable cmTC_a4a79
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a4a79.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare -Wall -Wextra -Wno-long-long -Wno-uninitialized  CMakeFiles/cmTC_a4a79.dir/src.cxx.o -o cmTC_a4a79 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test ZMQ_HAVE_NOEXCEPT succeeded with the following output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_6e283/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_6e283.dir/build.make CMakeFiles/cmTC_6e283.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6e283.dir/src.cxx.o
+/usr/bin/c++ -DZMQ_HAVE_NOEXCEPT  -std=c++11 -Wno-tautological-constant-compare -Wall -Wextra -Wno-long-long -Wno-uninitialized -pedantic  -MD -MT CMakeFiles/cmTC_6e283.dir/src.cxx.o -MF CMakeFiles/cmTC_6e283.dir/src.cxx.o.d -o CMakeFiles/cmTC_6e283.dir/src.cxx.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx:4:11: warning: unused parameter 'i' [-Wunused-parameter]
+    X(int i) noexcept {}
+          ^
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx:7:14: warning: unused parameter 'argc' [-Wunused-parameter]
+int main(int argc, char *argv [])
+             ^
+/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.cxx:7:26: warning: unused parameter 'argv' [-Wunused-parameter]
+int main(int argc, char *argv [])
+                         ^
+3 warnings generated.
+Linking CXX executable cmTC_6e283
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e283.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wno-tautological-constant-compare -Wall -Wextra -Wno-long-long -Wno-uninitialized -pedantic  CMakeFiles/cmTC_6e283.dir/src.cxx.o -o cmTC_6e283 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+struct X 
+{
+    X(int i) noexcept {}
+};
+
+int main(int argc, char *argv [])
+{
+    X x(5);
+    return 0;
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_SOCK_CLOEXEC succeeded with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_939f4/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_939f4.dir/build.make CMakeFiles/cmTC_939f4.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_939f4.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_SOCK_CLOEXEC  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_939f4.dir/src.c.o -MF CMakeFiles/cmTC_939f4.dir/src.c.o.d -o CMakeFiles/cmTC_939f4.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_939f4
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_939f4.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_939f4.dir/src.c.o -o cmTC_939f4 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <sys/types.h>
+#include <sys/socket.h>
+
+int main(int argc, char *argv [])
+{
+    int s = socket(PF_INET, SOCK_STREAM | SOCK_CLOEXEC, 0);
+    return(s == -1);
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_O_CLOEXEC succeeded with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_1a911/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_1a911.dir/build.make CMakeFiles/cmTC_1a911.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1a911.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_O_CLOEXEC  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_1a911.dir/src.c.o -MF CMakeFiles/cmTC_1a911.dir/src.c.o.d -o CMakeFiles/cmTC_1a911.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_1a911
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1a911.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_1a911.dir/src.c.o -o cmTC_1a911 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+int main(int argc, char *argv [])
+{
+    int s = open ("/dev/null", O_CLOEXEC | O_RDONLY);
+    return s == -1;
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_SO_KEEPALIVE succeeded with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_db58a/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_db58a.dir/build.make CMakeFiles/cmTC_db58a.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_db58a.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_SO_KEEPALIVE  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_db58a.dir/src.c.o -MF CMakeFiles/cmTC_db58a.dir/src.c.o.d -o CMakeFiles/cmTC_db58a.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_db58a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db58a.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_db58a.dir/src.c.o -o cmTC_db58a 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <sys/types.h>
+#include <sys/socket.h>
+
+int main(int argc, char *argv [])
+{
+    int s, rc, opt = 1;
+    return(
+       ((s = socket(PF_INET, SOCK_STREAM, 0)) == -1) ||
+       ((rc = setsockopt(s, SOL_SOCKET, SO_KEEPALIVE,(char*) &opt, sizeof(int))) == -1)
+    );
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_TCP_KEEPCNT succeeded with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_f1fc9/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_f1fc9.dir/build.make CMakeFiles/cmTC_f1fc9.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f1fc9.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_TCP_KEEPCNT  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_f1fc9.dir/src.c.o -MF CMakeFiles/cmTC_f1fc9.dir/src.c.o.d -o CMakeFiles/cmTC_f1fc9.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f1fc9
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1fc9.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_f1fc9.dir/src.c.o -o cmTC_f1fc9 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+
+int main(int argc, char *argv [])
+{
+    int s, rc, opt = 1;
+    return(
+       ((s = socket(PF_INET, SOCK_STREAM, 0)) == -1) ||
+       ((rc = setsockopt(s, SOL_SOCKET, SO_KEEPALIVE,(char*) &opt, sizeof(int))) == -1) ||
+       ((rc = setsockopt(s, IPPROTO_TCP, TCP_KEEPCNT,(char*) &opt, sizeof(int))) == -1)
+    );
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_TCP_KEEPIDLE succeeded with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_a4b9b/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_a4b9b.dir/build.make CMakeFiles/cmTC_a4b9b.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a4b9b.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_TCP_KEEPIDLE  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_a4b9b.dir/src.c.o -MF CMakeFiles/cmTC_a4b9b.dir/src.c.o.d -o CMakeFiles/cmTC_a4b9b.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a4b9b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a4b9b.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_a4b9b.dir/src.c.o -o cmTC_a4b9b 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+
+int main(int argc, char *argv [])
+{
+    int s, rc, opt = 1;
+    return(
+       ((s = socket(PF_INET, SOCK_STREAM, 0)) == -1) ||
+       ((rc = setsockopt(s, SOL_SOCKET, SO_KEEPALIVE,(char*) &opt, sizeof(int))) == -1) ||
+       ((rc = setsockopt(s, IPPROTO_TCP, TCP_KEEPIDLE,(char*) &opt, sizeof(int))) == -1)
+    );
+}
+
+Performing C SOURCE FILE Test ZMQ_HAVE_TCP_KEEPINTVL succeeded with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_94745/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_94745.dir/build.make CMakeFiles/cmTC_94745.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_94745.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_TCP_KEEPINTVL  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_94745.dir/src.c.o -MF CMakeFiles/cmTC_94745.dir/src.c.o.d -o CMakeFiles/cmTC_94745.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_94745
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94745.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_94745.dir/src.c.o -o cmTC_94745 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+
+int main(int argc, char *argv [])
+{
+    int s, rc, opt = 1;
+    return(
+       ((s = socket(PF_INET, SOCK_STREAM, 0)) == -1) ||
+       ((rc = setsockopt(s, SOL_SOCKET, SO_KEEPALIVE,(char*) &opt, sizeof(int))) == -1) ||
+       ((rc = setsockopt(s, IPPROTO_TCP, TCP_KEEPINTVL,(char*) &opt, sizeof(int))) == -1)
+    );
+}
+
+
+Performing C SOURCE FILE Test ZMQ_HAVE_GETRANDOM succeeded with the following compile output:
+Change Dir: /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/gmake -f Makefile cmTC_f2ed7/fast && /usr/local/bin/gmake  -f CMakeFiles/cmTC_f2ed7.dir/build.make CMakeFiles/cmTC_f2ed7.dir/build
+gmake[1]: Entering directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f2ed7.dir/src.c.o
+/usr/bin/cc -DZMQ_HAVE_GETRANDOM  -std=c11 -Wno-tautological-constant-compare  -MD -MT CMakeFiles/cmTC_f2ed7.dir/src.c.o -MF CMakeFiles/cmTC_f2ed7.dir/src.c.o.d -o CMakeFiles/cmTC_f2ed7.dir/src.c.o -c /home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f2ed7
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2ed7.dir/link.txt --verbose=1
+/usr/bin/cc  -std=c11 -Wno-tautological-constant-compare  CMakeFiles/cmTC_f2ed7.dir/src.c.o -o cmTC_f2ed7 
+gmake[1]: Leaving directory '/usr/home/vipnet/rtifssd/libzmq-master/CMakeFiles/CMakeTmp'
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <sys/random.h>
+
+int main (int argc, char *argv [])
+{
+    char buf[4];
+    int rc = getrandom(buf, 4, 0);
+    return rc == -1 ? 1 : 0;
+}
+
