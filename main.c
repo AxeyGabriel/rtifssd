@@ -306,21 +306,21 @@ void update_interface_data(void)
 		/*
 		 * CSV format
 		 * Columns:
-		 * 	1: Description
-		 * 	2: Traffic in
-		 * 	3: Traffic out
-		 * 	4: Peak In
-		 * 	5: Peak Out:
-		 * 	6: Total in
-		 * 	7: Total out
+		 *	1: Description
+		 *	2: Traffic in
+		 *	3: Traffic out
+		 *	4: Peak In
+		 *	5: Peak Out:
+		 *	6: Total in
+		 *	7: Total out
 		 */
 		sprintf(message + strlen(message), "\"%s,%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64"\",", \
 			p->descr,				\
-			p->if_in_curtraffic, 			\
-			p->if_out_curtraffic, 			\
-			p->if_in_traffic_peak, 			\
-			p->if_out_traffic_peak, 		\
-			p->mibdata.ifmd_data.ifi_ibytes, 	\
+			p->if_in_curtraffic,			\
+			p->if_out_curtraffic,			\
+			p->if_in_traffic_peak,			\
+			p->if_out_traffic_peak,			\
+			p->mibdata.ifmd_data.ifi_ibytes,	\
 			p->mibdata.ifmd_data.ifi_obytes);
 	}
 	
@@ -425,9 +425,9 @@ int main(int argc, char **argv)
 			if(strlen(message) > 0)
 			{
 				if (zmq_send(zmqpublisher, message, strlen(message), ZMQ_DONTWAIT) == -1)
-                {
-                    perror("zmd_send");
-                }
+				{
+					perror("zmq_send");
+				}
 				message[0] = '\0';
 			}
 		}
