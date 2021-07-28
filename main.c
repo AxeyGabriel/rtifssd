@@ -1,5 +1,5 @@
 /*-
- * Realtime Interface Status Sender Daemon
+ * Realtime Interface Statistics Sender Daemon
  * rtifssd
  * 
  * Written by Axey Gabriel Muller Endres
@@ -103,6 +103,7 @@ int get_ifmib_general(int row, struct ifmibdata *ifmd)
 
 void gracefully_exit(int signal)
 {
+	// TODO: 27 JUl 2021 - see why it segfaults here
 	//timer_delete(timerid);
 
 	struct if_stat *node = NULL;
@@ -307,17 +308,11 @@ void update_interface_data(void)
 		 * Columns:
 		 * 	1: Description
 		 * 	2: Traffic in
-		 * 	3: Traffic in scale
-		 * 	4: Traffic out
-		 * 	5: Traffic out scale:
-		 * 	6: Peak In
-		 * 	7: Peak In scale
-		 * 	8: Peak Out:
-		 * 	9: Peak Out scale
-		 * 	10: Total in
-		 * 	11: Total In scale
-		 * 	12: Total out
-		 * 	13: Total out scale
+		 * 	3: Traffic out
+		 * 	4: Peak In
+		 * 	5: Peak Out:
+		 * 	6: Total in
+		 * 	7: Total out
 		 */
 		sprintf(message + strlen(message), "\"%s,%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64"\",", \
 			p->descr,				\
@@ -333,7 +328,7 @@ void update_interface_data(void)
 	{
 		message[strlen(message) - 1] = '\0'; 
 	}
-	//message[strlen(message) - 1] = '\0';		// Remove last comma for json compliance
+	
 	sprintf(message + strlen(message), "], \"count\": %d}", count);	// Terminate JSON
 }
 
@@ -390,8 +385,8 @@ int main(int argc, char **argv)
 	
 	zmqcontext = zmq_ctx_new();
 	zmqpublisher = zmq_socket(zmqcontext, ZMQ_PUB);
-    int sndhwm = 1;
-    zmq_setsockopt(zmqpublisher, ZMQ_SNDHWM, &sndhwm, sizeof(sndhwm));
+	int sndhwm = 1;
+	zmq_setsockopt(zmqpublisher, ZMQ_SNDHWM, &sndhwm, sizeof(sndhwm));
 	if ((zmqrc = zmq_connect(zmqpublisher, server)) == -1)
 	{
 		syslog(LOG_ERR, "Error; zmq_connect: %m");
