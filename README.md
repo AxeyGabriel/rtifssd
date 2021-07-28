@@ -23,7 +23,8 @@ MPD daemon needs to write username into iface description, as its the way this s
 PS: This may change in future
 
 ### Dependencies
-ZeroMQ version 4
+ZeroMQ version 4 library\
+LLVM
 
 ### TODO
 Extensive testing\
