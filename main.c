@@ -103,6 +103,8 @@ int get_ifmib_general(int row, struct ifmibdata *ifmd)
 
 void gracefully_exit(int signal)
 {
+	int retrycount = 0;
+
 	// TODO: 27 JUl 2021 - see why it segfaults here
 	//timer_delete(timerid);
 
@@ -116,7 +118,17 @@ void gracefully_exit(int signal)
 	}
 
 	syslog(LOG_ALERT, "Trying to destroy ZeroMQ context...");
-	while (zmq_ctx_destroy(zmqcontext) == -1);
+	while (zmq_ctx_destroy(zmqcontext) == -1)
+	{
+		retrycount++;
+		sleep(1);
+
+		if (retrycount == 3)
+		{
+			break;
+		}
+	}
+
 	syslog(LOG_ALERT, "OK. Exiting.");	
 	closelog();
 
@@ -415,7 +427,7 @@ int main(int argc, char **argv)
 	zmq_setsockopt(zmqpublisher, ZMQ_SNDHWM, &sndhwm, sizeof(sndhwm));
 	if ((zmqrc = zmq_connect(zmqpublisher, server)) == -1)
 	{
-		syslog(LOG_ERR, "Error; zmq_connect: %s", zmq_strerror(errno));
+		syslog(LOG_ERR, "Error: zmq_connect: %s, server=", zmq_strerror(errno), server);
 	}
 
 	SLIST_INIT(&curlist);
