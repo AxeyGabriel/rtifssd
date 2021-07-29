@@ -400,14 +400,14 @@ int main(int argc, char **argv)
 	zmqcontext = zmq_ctx_new();
 	if (zmqcontext == NULL)
 	{
-		syslog("zmq_ctx_new error: %s", zmq_strerror(errno));
+		syslog(LOG_ERR, "zmq_ctx_new error: %s", zmq_strerror(errno));
 		return 1;
 	}
 
 	zmqpublisher = zmq_socket(zmqcontext, ZMQ_PUB);
 	if (zmqpublisher == NULL)
 	{
-		syslog("zmq_socket error: %s", zmq_strerror(errno));
+		syslog(LOG_ERR, "zmq_socket error: %s", zmq_strerror(errno));
 		return 1;
 	}
 
