@@ -400,14 +400,14 @@ int main(int argc, char **argv)
 	zmqcontext = zmq_ctx_new();
 	if (zmqcontext == NULL)
 	{
-		syslog("zmq_ctx_new error: %s", zmq_strerror());
+		syslog("zmq_ctx_new error: %s", zmq_strerror(errno));
 		return 1;
 	}
 
 	zmqpublisher = zmq_socket(zmqcontext, ZMQ_PUB);
 	if (zmqpublisher == NULL)
 	{
-		syslog("zmq_socket error: %s", zmq_strerror());
+		syslog("zmq_socket error: %s", zmq_strerror(errno));
 		return 1;
 	}
 
@@ -415,7 +415,7 @@ int main(int argc, char **argv)
 	zmq_setsockopt(zmqpublisher, ZMQ_SNDHWM, &sndhwm, sizeof(sndhwm));
 	if ((zmqrc = zmq_connect(zmqpublisher, server)) == -1)
 	{
-		syslog(LOG_ERR, "Error; zmq_connect: %s", zmq_strerror());
+		syslog(LOG_ERR, "Error; zmq_connect: %s", zmq_strerror(errno));
 	}
 
 	SLIST_INIT(&curlist);
@@ -452,7 +452,7 @@ int main(int argc, char **argv)
 			{
 				if (zmq_send(zmqpublisher, message, strlen(message), ZMQ_DONTWAIT) == -1)
 				{
-					syslog(LOG_ERR, "zmq_send error: %s", zmq_strerror());
+					syslog(LOG_ERR, "zmq_send error: %s", zmq_strerror(errno));
 				}
 				message[0] = '\0';
 			}
