@@ -115,8 +115,11 @@ void gracefully_exit(int signal)
 		free(node);
 	}
 
-	syslog(LOG_ALERT, "Exiting...");
+	syslog(LOG_ALERT, "Trying to destroy ZeroMQ context...");
+	while (zmq_ctx_destroy(zmqcontext) == -1);
+	syslog(LOG_ALERT, "OK. Exiting.");	
 	closelog();
+
 	exit(1);
 }
 
@@ -395,12 +398,24 @@ int main(int argc, char **argv)
 	}
 	
 	zmqcontext = zmq_ctx_new();
+	if (zmqcontext == NULL)
+	{
+		syslog("zmq_ctx_new error: %s", zmq_strerror());
+		return 1;
+	}
+
 	zmqpublisher = zmq_socket(zmqcontext, ZMQ_PUB);
+	if (zmqpublisher == NULL)
+	{
+		syslog("zmq_socket error: %s", zmq_strerror());
+		return 1;
+	}
+
 	int sndhwm = 1;
 	zmq_setsockopt(zmqpublisher, ZMQ_SNDHWM, &sndhwm, sizeof(sndhwm));
 	if ((zmqrc = zmq_connect(zmqpublisher, server)) == -1)
 	{
-		syslog(LOG_ERR, "Error; zmq_connect: %m");
+		syslog(LOG_ERR, "Error; zmq_connect: %s", zmq_strerror());
 	}
 
 	SLIST_INIT(&curlist);
@@ -437,7 +452,7 @@ int main(int argc, char **argv)
 			{
 				if (zmq_send(zmqpublisher, message, strlen(message), ZMQ_DONTWAIT) == -1)
 				{
-					perror("zmq_send");
+					syslog(LOG_ERR, "zmq_send error: %s", zmq_strerror());
 				}
 				message[0] = '\0';
 			}
