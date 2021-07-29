@@ -7,7 +7,9 @@ It was written to use in a server running Multi-link PPP daemon (MPD) and is a s
 Logging to syslog(8)\
 Current traffic\
 Traffic peak\
-Total traffic
+Total traffic\
+Current packets per second\
+Peak packets per second
 
 ### Supported platforms
 FreeBSD (Tested versions: 12.1-RELEASE and 13.0-RELEASE)

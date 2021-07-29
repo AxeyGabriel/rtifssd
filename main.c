@@ -38,7 +38,7 @@ char myhostname[_POSIX_HOST_NAME_MAX + 1];
 SLIST_HEAD(, if_stat) curlist;
 
 bool processing = false;
-	
+
 timer_t timerid;
 struct itimerspec in;
 struct sigevent se;
@@ -309,27 +309,38 @@ void update_interface_data(void)
 		 *	1: Description
 		 *	2: Traffic in
 		 *	3: Traffic out
-		 *	4: Peak In
-		 *	5: Peak Out:
-		 *	6: Total in
-		 *	7: Total out
+		 *	4: Peak Traffic In
+		 *	5: Peak Traffic Out
+		 *	6: Total inbound octets
+		 *	7: Total outbound octets
+		 *	8: Packets per second in
+		 *	9: Packets per second out
+		 *	10: Peak pps in
+		 *	11: Peak pps out
 		 */
-		sprintf(message + strlen(message), "\"%s,%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64"\",", \
-			p->descr,				\
-			p->if_in_curtraffic,			\
-			p->if_out_curtraffic,			\
-			p->if_in_traffic_peak,			\
-			p->if_out_traffic_peak,			\
+		
+		sprintf(message + strlen(message), "\"%s,%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64",%"PRId64"\",", \
+			p->descr,							\
+			p->if_in_curtraffic,				\
+			p->if_out_curtraffic,				\
+			p->if_in_traffic_peak,				\
+			p->if_out_traffic_peak,				\
 			p->mibdata.ifmd_data.ifi_ibytes,	\
-			p->mibdata.ifmd_data.ifi_obytes);
+			p->mibdata.ifmd_data.ifi_obytes,	\
+			p->if_in_curpps,					\
+			p->if_out_curpps,					\
+			p->if_in_pps_peak,					\
+			p->if_out_pps_peak);
 	}
-	
+
+	/* Delete last comma if there is any interface in the list */
 	if (message[strlen(message) - 1] == ',')
 	{
 		message[strlen(message) - 1] = '\0'; 
 	}
 	
-	sprintf(message + strlen(message), "], \"count\": %d}", count);	// Terminate JSON
+	/* Terminate JSON */
+	sprintf(message + strlen(message), "], \"count\": %d}", count);
 }
 
 void do_interfaces(union sigval arg)
