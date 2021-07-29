@@ -26,8 +26,8 @@
 #include <signal.h>
 #include <inttypes.h>
 #include <syslog.h>
-#include <time.h>
 #include <zmq.h>
+#include <fcntl.h>
 
 #define DESCRLEN 64
 #define VERSION 1
@@ -37,17 +37,9 @@ char message[MESSAGESIZE];
 char myhostname[_POSIX_HOST_NAME_MAX + 1];
 SLIST_HEAD(, if_stat) curlist;
 
-bool processing = false;
-
-timer_t timerid;
-struct itimerspec in;
-struct sigevent se;
-
-void *zmqcontext;
-void *zmqpublisher;
-int zmqrc;
-
 char *ifacepattern = NULL;
+
+int signal_fd;
 
 struct if_stat
 {
@@ -67,7 +59,188 @@ struct if_stat
 	uint64_t if_out_pps_peak;
 	bool first;
 };
+
+int get_ifmib_ifcount(int *value);
+int get_ifmib_general(int row, struct ifmibdata *ifmd);
+void update_interface_index(void);
+void update_interface_data(void);
+
+void sighandler(int signal)
+{
+	int rc = write(signal_fd, " ", 1);
+	if (rc != 1)
+	{
+		syslog(LOG_ERR, "Signal handler: Error writing to pipe");
+		exit(1);
+	}
+}
+
+int main(int argc, char **argv)
+{
+	char *server = NULL;
+	int ch;
+	int sockoptval = 1;
+	int pipefds[2];
+	int rc;
+	int i;
+	struct timeval time_before, time_after;
+	uint64_t elapsed_us;
+
+	openlog("rtifssd", LOG_PID | LOG_NDELAY, LOG_LOCAL0);
+	syslog(LOG_INFO, "System started, initializing....");
+
+	/* Arguments parsing */
+	while ((ch = getopt(argc, argv, "s:i:")) != -1)
+	{
+		switch (ch)
+		{
+			case 's':
+				server = optarg;
+				break;
+			case 'i':
+				ifacepattern = optarg;
+				break;
+			case '?':
+			default:
+				syslog(LOG_ERR, "Error: please specify -s for server address");
+				return 1;
+		}
+	}
+	if (server == NULL || ifacepattern == NULL)
+	{
+		syslog(LOG_ERR, "Error: wrong or missing arguments.");
+		return 1;
+	}
+		
+	/* Signal handling */
+	rc = pipe(pipefds);
+	if (rc != 0)
+	{
+		syslog(LOG_ERR, "Error creating pipe: %m");
+		return 1;
+	}
 	
+	for (i = 0; i < 2; i++)
+	{
+		int flags = fcntl(pipefds[i], F_GETFL, 0);
+		if (flags < 0)
+		{
+			syslog(LOG_ERR, "Error: fcntl: %m");
+			return 1;
+		}
+		rc = fcntl(pipefds[i], F_SETFL, flags | O_NONBLOCK);
+		if (rc != 0)
+		{
+			syslog(LOG_ERR, "Error: fcntl: %m");
+			return 1;
+		}
+	}
+	
+	signal_fd = pipefds[1];
+
+	zmq_pollitem_t items[] =
+	{
+		{ 0, pipefds[0], ZMQ_POLLIN, 0 }
+	};
+
+	signal(SIGINT, sighandler);
+	signal(SIGTERM, sighandler);
+
+	gethostname(myhostname, _POSIX_HOST_NAME_MAX + 1);
+
+	/* Set a low process priority */
+	if (nice(15))
+	{
+		syslog(LOG_ERR, "Error: nice: %m");
+		return 1;
+	}
+
+	/* ZeroMQ Connection Handling */
+	void *zmqcontext = zmq_ctx_new();
+	if (zmqcontext == NULL)
+	{
+		syslog(LOG_ERR, "zmq_ctx_new error: %s", zmq_strerror(errno));
+		return 1;
+	}
+
+	void *zmqpublisher = zmq_socket(zmqcontext, ZMQ_PUB);
+	if (zmqpublisher == NULL)
+	{
+		syslog(LOG_ERR, "zmq_socket error: %s", zmq_strerror(errno));
+		return 1;
+	}
+
+	sockoptval = 1;
+	zmq_setsockopt(zmqpublisher, ZMQ_SNDHWM, &sockoptval, sizeof(sockoptval));
+	
+	if ((rc = zmq_connect(zmqpublisher, server)) == -1)
+	{
+		syslog(LOG_ERR, "Error: zmq_connect: %s, server=%s", zmq_strerror(errno), server);
+	}
+	
+	syslog(LOG_INFO, "Sending statistics to %s", server);
+
+	/* Initialize our linked list containing the interfaces */
+	SLIST_INIT(&curlist);
+
+	while (1)
+	{
+		/* TODO 29-JUL-2021:
+		 * Optimize this, it's ugly
+		 */
+		gettimeofday(&time_before, NULL);
+		update_interface_index();
+		update_interface_data();
+		gettimeofday(&time_after, NULL);
+		elapsed_us = ((time_after.tv_sec - time_before.tv_sec) * 1000000L + time_after.tv_usec) - time_before.tv_usec;
+
+			
+		if (zmq_send(zmqpublisher, message, strlen(message), ZMQ_DONTWAIT) == -1)
+		{
+			syslog(LOG_ERR, "zmq_send error: %s", zmq_strerror(errno));
+		}
+
+		/* Event handling */
+		rc = zmq_poll(items, 1, 0);
+		if (rc < 0)
+		{
+			if (errno == EINTR)
+			{
+				continue;
+			}
+
+			syslog(LOG_ERR, "zmq_poll: %s", zmq_strerror(errno));
+			return 1;
+		}
+
+		/* Received an interrupt */
+		if (items[0].revents & ZMQ_POLLIN)
+		{
+			char buffer[1];
+			read(pipefds[0], buffer, 1);
+			syslog(LOG_NOTICE, "Interrupt received, stopping system.");
+			break;
+		}
+
+		usleep(1000000 - elapsed_us);
+		printf("elapsed microseconds = %ld, sleep seconds = %ld\n", elapsed_us, 1000000 - elapsed_us);
+	}
+
+	/* Reached the end of the life cycle */
+	struct if_stat *node = NULL;
+	while (!SLIST_EMPTY(&curlist))
+	{
+		node = SLIST_FIRST(&curlist);
+		SLIST_REMOVE_HEAD(&curlist, link);
+		free(node);
+	}
+
+	syslog(LOG_ALERT, "Everything cleaned up. Exiting.");	
+	closelog();
+
+	return 0;
+}
+
 int get_ifmib_ifcount(int *value)
 {
 	int name[6];
@@ -99,40 +272,6 @@ int get_ifmib_general(int row, struct ifmibdata *ifmd)
 	len = sizeof(*ifmd);
 	
 	return sysctl(name, 6, ifmd, &len, (void *)0, 0);
-}
-
-void gracefully_exit(int signal)
-{
-	int retrycount = 0;
-
-	// TODO: 27 JUl 2021 - see why it segfaults here
-	//timer_delete(timerid);
-
-	struct if_stat *node = NULL;
-
-	while (!SLIST_EMPTY(&curlist))
-	{
-		node = SLIST_FIRST(&curlist);
-		SLIST_REMOVE_HEAD(&curlist, link);
-		free(node);
-	}
-
-	syslog(LOG_ALERT, "Trying to destroy ZeroMQ context...");
-	while (zmq_ctx_destroy(zmqcontext) == -1)
-	{
-		retrycount++;
-		sleep(1);
-
-		if (retrycount == 3)
-		{
-			break;
-		}
-	}
-
-	syslog(LOG_ALERT, "OK. Exiting.");	
-	closelog();
-
-	exit(1);
 }
 
 void update_interface_index(void)
@@ -356,123 +495,4 @@ void update_interface_data(void)
 	
 	/* Terminate JSON */
 	sprintf(message + strlen(message), "], \"count\": %d}", count);
-}
-
-void do_interfaces(union sigval arg)
-{
-	processing = true;
-	update_interface_index();
-	update_interface_data();
-	processing = false;
-}
-
-int main(int argc, char **argv)
-{
-	char *server = NULL;
-	int ch;
-	int ret;
-
-	openlog("rtifssd", LOG_PID | LOG_NDELAY, LOG_LOCAL0);
-	syslog(LOG_INFO, "System started, initializing....");
-
-	/* Parse arguments */
-	while ((ch = getopt(argc, argv, "s:i:")) != -1)
-	{
-		switch (ch)
-		{
-			case 's':
-				server = optarg;
-				break;
-			case 'i':
-				ifacepattern = optarg;
-				break;
-			case '?':
-			default:
-				syslog(LOG_ERR, "Error: please specify -s for server address");
-				return 1;
-		}
-	}
-
-	if (server == NULL || ifacepattern == NULL)
-	{
-		syslog(LOG_ERR, "Error: wrong or missing arguments.");
-		return 1;
-	}
-		
-	/* Signal handling */
-	signal(SIGINT, gracefully_exit);
-
-	gethostname(myhostname, _POSIX_HOST_NAME_MAX + 1);
-
-	if (nice(15))
-	{
-		syslog(LOG_ERR, "Error: nice: %m");
-	}
-	
-	zmqcontext = zmq_ctx_new();
-	if (zmqcontext == NULL)
-	{
-		syslog(LOG_ERR, "zmq_ctx_new error: %s", zmq_strerror(errno));
-		return 1;
-	}
-
-	zmqpublisher = zmq_socket(zmqcontext, ZMQ_PUB);
-	if (zmqpublisher == NULL)
-	{
-		syslog(LOG_ERR, "zmq_socket error: %s", zmq_strerror(errno));
-		return 1;
-	}
-
-	int sndhwm = 1;
-	zmq_setsockopt(zmqpublisher, ZMQ_SNDHWM, &sndhwm, sizeof(sndhwm));
-	if ((zmqrc = zmq_connect(zmqpublisher, server)) == -1)
-	{
-		syslog(LOG_ERR, "Error: zmq_connect: %s, server=%s", zmq_strerror(errno), server);
-	}
-
-	SLIST_INIT(&curlist);
-
-	in.it_value.tv_sec = 1;
-	in.it_value.tv_nsec = 0;
-	in.it_interval.tv_sec = 1;
-	in.it_interval.tv_nsec = 0;
-
-	se.sigev_notify = SIGEV_THREAD;
-	se.sigev_value.sival_ptr = &timerid;
-	se.sigev_notify_function = do_interfaces;
-	se.sigev_notify_attributes = NULL;
-
-	if ((timer_create(CLOCK_REALTIME, &se, &timerid)) == -1)
-	{
-		syslog(LOG_ERR, "Error: timer_create: %m");
-		gracefully_exit(0);
-	}
-	
-	if ((ret = timer_settime(timerid, 0, &in, 0)) == -1)
-	{
-		syslog(LOG_ERR, "Error: time_settime: %m");
-		gracefully_exit(0);
-	}
-
-	syslog(LOG_INFO, "Sending statistics to %s", server);
-	
-	while (1)
-	{
-		if (!processing)
-		{
-			if(strlen(message) > 0)
-			{
-				if (zmq_send(zmqpublisher, message, strlen(message), ZMQ_DONTWAIT) == -1)
-				{
-					syslog(LOG_ERR, "zmq_send error: %s", zmq_strerror(errno));
-				}
-				message[0] = '\0';
-			}
-		}
-		usleep(1000);
-	}
-
-	/* We shouldn't get here */
-	syslog(LOG_CRIT, "Error: reached end of main function. **REPORT THIS TO THE ADMIN**");
-	gracefully_exit(0);
 }
