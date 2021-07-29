@@ -427,7 +427,7 @@ int main(int argc, char **argv)
 	zmq_setsockopt(zmqpublisher, ZMQ_SNDHWM, &sndhwm, sizeof(sndhwm));
 	if ((zmqrc = zmq_connect(zmqpublisher, server)) == -1)
 	{
-		syslog(LOG_ERR, "Error: zmq_connect: %s, server=", zmq_strerror(errno), server);
+		syslog(LOG_ERR, "Error: zmq_connect: %s, server=%s", zmq_strerror(errno), server);
 	}
 
 	SLIST_INIT(&curlist);
