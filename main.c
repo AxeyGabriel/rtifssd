@@ -235,6 +235,9 @@ int main(int argc, char **argv)
 		free(node);
 	}
 
+	zmq_close(zmqpublisher);
+	zmq_ctx_destroy(zmqcontext);
+
 	syslog(LOG_ALERT, "Everything cleaned up. Exiting.");	
 	closelog();
 
